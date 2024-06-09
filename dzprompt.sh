@@ -11,13 +11,14 @@ git_dirty() {
   [[ $(git status --porcelain) ]] && echo "*"
 }
 
-RED='\e[31m'
-GREEN='\e[32m'
-YELLOW='\e[1;33m'
-BLUE='\e[1;34m'
-MAGENTA='\e[1;35m'
-CYAN='\e[36m'
-WHITE='\e[1;37m'
+REDBOLD='\e[1;91m'
+GREEN='\e[92m'
+YELLOW='\e[93m'
+BLUE='\e[94m'
+#MAGENTA='\e[1;35m'
+#CYAN='\e[36m'
+#WHITE='\e[1;37m'
 ENDCOLOR='\e[0m'
 
-PS1="\n┌${YELLOW}\u@${GREEN}\H ${BLUE}\w ${RED}\$(git_branch)${ENDCOLOR}\n└> "
+PS1="\n┌${YELLOW}\u@${GREEN}\H ${BLUE}\w ${REDBOLD}\$(git_branch)${ENDCOLOR}\n└> "
+
