@@ -3,7 +3,8 @@
 
 git_branch() {
   branch="$(git branch --show-current 2> /dev/null)"
-  [[ -n $branch ]] && echo "($branch$(git_dirty)) "
+#  [[ -n $branch ]] && echo "($branch$(git_dirty)) "
+  [[ -n $branch ]] && echo "($branch) "
 }
 
 git_dirty() {
@@ -19,4 +20,4 @@ CYAN='\e[36m'
 WHITE='\e[1;37m'
 ENDCOLOR='\e[0m'
 
-PS1="\n┌${YELLOW}\u@${GREEN}\h ${BLUE}\w ${RED}\$(git_branch)${ENDCOLOR}\n└> "
+PS1="\n┌${YELLOW}\u@${GREEN}\H ${BLUE}\w ${RED}\$(git_branch)${ENDCOLOR}\n└> "
