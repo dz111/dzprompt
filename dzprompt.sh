@@ -1,6 +1,14 @@
 # Add to ~/.bashrc:
 #   source ~/dzprompt/dzprompt.sh
 
+TERMINAL_TYPE=$(tty)
+if [[ "$TERMINAL_TYPE" == /dev/tty* ]]; then
+  echo -en "\e]P9982b2b"  # red
+  echo -en "\e]PA89b83f"  # green
+  echo -en "\e]PBefef60"  # yellow
+  echo -en "\e]PC2b4f98"  # blue
+fi
+
 git_branch() {
   branch="$(git branch --show-current 2> /dev/null)"
 #  [[ -n $branch ]] && echo "($branch$(git_dirty)) "
